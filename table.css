@@ -1,0 +1,132 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+th {
+  background-color: #0170a7;
+  color: white;
+  text-align: center;
+}
+
+td {
+  background-color: #cdecff;
+}
+
+/**h1{
+        margin-top:22px; to adjust top margin 
+    text-align: center;
+}*/
+/**table th td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}*/
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**a.link{
+	background-color: #ED2F2F;
+  color: white;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+  a.link:hover {
+  background-color: #FEE10A;
+  color: black;
+}**/
+/**----------navbar----------**/
+img.logo {
+  width: 350px;
+  height: auto;
+}
+
+.navbar-bgcolor {
+  background-color: #fff9dd;
+}
+
+.nav1 {
+  margin-right: 14px;
+}
+
+/**.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+}*/
+
+/**----------navbar------------**/
+
+/**-----------general section--------**/
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.small-container {
+  /**.popular-container, .featured-container, .testimonial-container, .partner-container*/
+  max-width: 1160px;
+  margin: auto;
+  padding-left: 0px;
+  /**22px**/
+  padding-right: 0px;
+}
+
+/**-----------general section--------**/
+
+/**-----------col section--------**/
+.allform {
+  margin-top: 24px;
+  /**--100px auto--topbot rightleft---*/
+}
+
+.allform .col-12 {
+  /**--bigger %, smaller space--**/
+  min-width: 200px;
+}
+
+h1.allform2 {
+  margin-top: 36px;
+}
+
+a.link2 {
+  background-color: #d84a38;
+  color: white;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.link2:hover {
+  background-color: #fee10a;
+  color: black;
+}
+a.link {
+  margin-top: 20px;
+  /**top rightleft bottom*/
+  display: inline-block;
+}
+
+/**-----------col section--------**/
