@@ -28,7 +28,8 @@ if ($bn != NULL && $au != NULL) {
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="table.css" rel="stylesheet" type="text/css" />
+    <!--<link href="table.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="table.css?v=<?php echo time(); ?>">
     <style>
         
     </style>

@@ -22,6 +22,11 @@ img.logo {
   margin-right: 46px;
 }
 
+a.nav-link{
+  font-size: 15px;
+}
+
+
 /**.navbar{
     position: fixed;
     top:0;

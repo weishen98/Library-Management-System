@@ -21,6 +21,10 @@ img.logo {
   margin-right: 46px;
 }
 
+a.nav-link{
+  font-size: 15px;
+}
+
 /**.nav2 {
             margin-left: 8px;
         }*/

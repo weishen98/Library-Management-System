@@ -60,6 +60,10 @@ img.logo {
   margin-right: 14px;
 }
 
+a.nav-link{
+  font-size: 15px;
+}
+
 /**.navbar{
     position: fixed;
     top:0;
@@ -109,7 +113,7 @@ h1.allform2 {
   margin-top: 36px;
 }
 
-a.link2 {
+.link2 {
   background-color: #d84a38;
   color: white;
   padding: 7px;
@@ -117,9 +121,10 @@ a.link2 {
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+  display: inline-block;
 }
 
-a.link2:hover {
+.link2:hover {
   background-color: #fee10a;
   color: black;
 }
@@ -127,6 +132,9 @@ a.link {
   margin-top: 20px;
   /**top rightleft bottom*/
   display: inline-block;
+}
+.form1 {
+  display:inline-block;
 }
 
 /**-----------col section--------**/

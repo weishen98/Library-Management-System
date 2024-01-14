@@ -38,6 +38,7 @@ if ($_FILES["image"]["error"] == 4) {
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 
@@ -48,8 +49,20 @@ if ($_FILES["image"]["error"] == 4) {
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="table.css" rel="stylesheet" type="text/css" />
+    <!--<link href="table.css" rel="stylesheet" type="text/css" />-->
+    <link rel="stylesheet" href="table.css?v=<?php echo time(); ?>">
     <style>
+/*.button{   
+  background-color: #d84a38;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 7px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}*/
 
     </style>
 
@@ -130,6 +143,7 @@ if ($_FILES["image"]["error"] == 4) {
                             <th>Category</th>
                             <th>Quantity</th>
                             <th>Image</th>
+                            <th>Operations</th>
                         </tr>
                         <?php
                         $i = 1;
@@ -145,6 +159,12 @@ if ($_FILES["image"]["error"] == 4) {
                                 <td><?php echo $row["category"]; ?></td>
                                 <td><?php echo $row["quantity"]; ?></td>
                                 <td> <img src="img/<?php echo $row["image"]; ?>" width=200 title="<?php echo $row['image']; ?>"> </td>
+                                <td><a class= "link2" href="edit.php?id=<?php echo $row['id']; ?>&name=<?php echo urlencode($row['name']); ?>&author=<?php echo urlencode($row['author']); ?>&pdate=<?php echo urlencode($row['pdate']); ?>&category=<?php echo urlencode($row['category']); ?>&quantity=<?php echo $row['quantity']; ?>">Edit</a>
+                            
+                            <form class="form1" action="edit.php?id=<?php echo $row['id']; ?>" method="post">
+                                <button class="link2" type="submit" name="submit" value="delete">Delete</button>
+                            </form>
+                        </td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
