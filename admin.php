@@ -64,7 +64,7 @@ if ($aid == NULL || $_POST['pass'] == NULL) {
                     <table class="center">
                         <form method="post" action="">
                             <tr>
-                                <td colspan="2" class="msg"><?php echo $msg; ?></td>
+                                <td colspan="2" class="error-msg"><?php echo $msg; ?></td>
                             </tr>
                             <tr>
                                 <td class="">Admin ID : </td>

@@ -4,18 +4,20 @@ session_start();
 if (!isset($_SESSION['aid'])) {
     header("location:index.php");
 }
+
 $aid = $_SESSION['aid'];
 $a = mysqli_query($set, "SELECT * FROM admin WHERE aid='$aid'");
 $b = mysqli_fetch_array($a);
 $name = $b['name'];
+
 $bn = $_POST['name'];
 $au = $_POST['auth'];
 $pdate = $_POST["pdate"];
 $category = $_POST["category"];
 $quantity = $_POST["quantity"];
+
 if ($_FILES["image"]["error"] == 4) {
-    echo
-    "<script> alert('Image Does Not Exist'); </script>";
+    echo "<script> alert('Image Does Not Exist'); </script>";
 } else {
     $fileName = $_FILES["image"]["name"];
     $fileSize = $_FILES["image"]["size"];
@@ -27,33 +29,30 @@ if ($_FILES["image"]["error"] == 4) {
 
     $newImageName = uniqid();
     $newImageName .= '.' . $imageExtension;
+
     if ($fileSize > 1000000) {
-        echo
-        "
-        <script>
-          alert('Image Size Is Too Large');
-        </script>
-        ";
+        echo "<script>alert('Image Size Is Too Large');</script>";
     } else {
         $newImageName = uniqid();
         $newImageName .= '.' . $imageExtension;
-        // print("<pre>");
-        // print_r($newImageName);
-        // echo "\n Testing 2nd Data \n";
-        // print_r($tmpName);
-
-        // $tempName = "/";
-        // print_r($newImageName);
-        // print_r($newImageName);
-        // print_r($newImageName);
-        //die();
         move_uploaded_file($tmpName, 'img/' . $newImageName);
+
         if ($bn != NULL && $au != NULL && $pdate != NULL && $category != NULL && $quantity != NULL && $newImageName != NULL) {
-            $sql = mysqli_query($set, "INSERT INTO books(name,author,pdate,category,quantity,image) VALUES('$bn','$au','$pdate','$category','$quantity','$newImageName')");
-            if ($sql) {
-                $msg = "Successfully Added";
-            } else {
+            $sqlCheckExistence = mysqli_query($set, "SELECT * FROM books WHERE name='$bn' AND author='$au'");
+            
+            if (mysqli_num_rows($sqlCheckExistence) > 0) {
                 $msg = "Book Already Exists";
+                $msgClass = "error-msg";
+            } else {
+                $sql = mysqli_query($set, "INSERT INTO books(name,author,pdate,category,quantity,image) VALUES('$bn','$au','$pdate','$category','$quantity','$newImageName')");
+                
+                if ($sql) {
+                    $msg = "Successfully Added";
+                    $msgClass = "msg";
+                } else {
+                    $msg = "Error Adding Book";
+                    $msgClass = "error-msg";
+                }
             }
         }
     }
@@ -147,7 +146,7 @@ if ($_FILES["image"]["error"] == 4) {
                     <table class="center">
                         <form method="post" action="" enctype="multipart/form-data">
                             <tr>
-                                <td class="msg" colspan="2"><?php echo $msg; ?></td>
+                                <td class="msg <?php echo $msgClass; ?>" colspan="2"><?php echo $msg; ?></td>
                             </tr>
                             <tr>
                                 <td class="">Book : </td>
