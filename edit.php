@@ -194,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </tr>
                             <tr>
     
-    <td class=""><input type="hidden" name="id" value="<?php echo $_GET['id']; ?>"> required>
+    <td class=""><input type="hidden" name="id" value="<?php echo $_GET['id']; ?>" required>
         </td>
 </tr>     
 <tr>
