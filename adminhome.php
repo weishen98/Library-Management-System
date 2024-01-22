@@ -247,7 +247,7 @@ $name = $b['name'];
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i><br>
                     <i class="fa-solid fa-quote-left"></i><br>
-                    <p>呢間圖書館真高級，設備齊全，各種书读，有水準服務，真係好好嘢! 冇得頂呀! This library very geng chao. 10/10 would come again!!</p>
+                    <p>呢間圖書館真高級，設備齊全，各種书读，有水準服務，真係好犀利! 冇得頂呀! This library very geng chao. 10/10 would come again!!</p>
 
                 </div>
 
